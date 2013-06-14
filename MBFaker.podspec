@@ -14,6 +14,9 @@ Pod::Spec.new do |s|
   s.author       = { "Michał Banasiak" => "m.banasiak@aol.pl" }
   s.source       = { :git => "git://github.com/bananita/MBFaker.git", :branch => "master" }
   s.platform     = :ios, '5.0'
-  s.source_files = 'MBFaker', 'MBFaker/**/*.{h,m}'
+  s.source_files = 'MBFaker'
+  s.resources    = 'MBFaker/Locales'
+  s.preserve_paths    = 'MBFaker/Locales'
   s.requires_arc = true
+  s.dependency   'LibYAML', '~> 0.1.4'
 end
