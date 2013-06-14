@@ -14,21 +14,21 @@
 
 + (NSDictionary*)translations {
     NSMutableDictionary* translationsDictionary = [[NSMutableDictionary alloc] init];
-    
-    NSArray* translationPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"yml" inDirectory:@""];
-    
+
+    NSArray* translationPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"yml" inDirectory:@"Locales"];
+
     for (NSString* path in translationPaths) {
         NSInputStream *stream = [[NSInputStream alloc] initWithFileAtPath: path];
         
         NSMutableArray* yaml = [YAMLSerialization YAMLWithStream: stream
                                                          options: kYAMLReadOptionStringScalars
-                                                           error: NULL];
+                                                           error: nil];
         
         NSDictionary* dictionary = (NSDictionary*)[yaml objectAtIndex:0];
         
         NSString* key = [[dictionary allKeys] objectAtIndex:0];
-        
-        [translationsDictionary setObject: [dictionary objectForKey:key] forKey:key];
+        if (key != nil)
+            [translationsDictionary setObject: [dictionary objectForKey:key] forKey:key];
     }
     
     return (NSDictionary*)translationsDictionary;
