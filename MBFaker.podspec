@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://github.com/bananita/MBFaker/blob/master/Screenshots/ios.png"
   s.license      = 'This code is free to use under the terms of the MIT license'
   s.author       = { "M. Banasiak" => "m.banasiak@aol.pl" }
-  s.source       = { :git => "git://github.com/bananita/MBFaker.git", :branch => "master" }
+  s.source       = { :git => "https://github.com/juarlex/MBFaker.git" }
   s.platform     = :ios, '5.0'
   s.source_files = 'MBFaker'
   s.resources    = 'MBFaker/Locales'
