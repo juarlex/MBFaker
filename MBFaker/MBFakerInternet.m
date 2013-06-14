@@ -37,11 +37,11 @@
 }
 
 + (NSString*)domainName {
-    
+    return [NSString stringWithFormat:@"%@.%@", [MBFakerInternet domainWord], [MBFakerInternet domainSuffix]];
 }
 
 + (NSString*)domainWord {
-    
+    return [[[MBFakerCompany name] lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@"-"];
 }
 
 + (NSString*)domainSuffix {
